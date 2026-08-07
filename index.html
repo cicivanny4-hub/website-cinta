@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untukk Kesayangggkuuu🤍</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+overflow:hidden;
+background:linear-gradient(135deg,#ff9ecb,#ffd6e8,#fff);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:black;
+}
+
+.container{
+text-align:center;
+padding:30px;
+max-width:700px;
+}
+
+h1{
+font-size:45px;
+margin-bottom:20px;
+text-shadow:2px 2px 8px #ff4081;
+}
+
+p{
+font-size:22px;
+line-height:35px;
+}
+
+button{
+margin-top:30px;
+padding:15px 40px;
+font-size:20px;
+border:none;
+border-radius:50px;
+background:#ff4081;
+color:white;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 0 20px pink;
+}
+
+button:hover{
+transform:scale(1.1);
+background:#ff0066;
+}
+
+#letter{
+display:none;
+animation:fade 2s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.heart{
+position:absolute;
+color:#ff4081;
+font-size:25px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-100px);
+opacity:1;
+}
+100%{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+
+#love{
+display:none;
+font-size:50px;
+margin-top:30px;
+animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.2);}
+100%{transform:scale(1);}
+}
+
+img{
+width:220px;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 0 20px white;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="welcome">
+
+<h1>🤍 Untukk Daniell Edhamm 🤍</h1>
+
+<p>
+Haii Sayanggg...
+<br><br>
+Akuu membuatt websitee kecill inii khususs untukk kamuu.
+Semogaa kamuu sukaa yaa 🤍
+</p>
+
+<button onclick="openLetter()">
+Buka Pesan 💌
+</button>
+
+</div>
+
+<div id="letter">
+
+<h1>I Lovee Youu 🤍</h1>
+
+<p id="typing"></p>
+
+<img src="daniel-vanny.jpeg " alt="Daniel dan vanny" width="300">
+
+<br>
+
+<button onclick="showLove()">
+Klik Aku ❤️
+</button>
+
+<div id="love">
+❤ I LOVEE YOUU THEE MOSTT 🤍
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function openLetter(){
+
+document.getElementById("welcome").style.display="none";
+document.getElementById("letter").style.display="block";
+
+typeWriter();
+
+}
+
+let text=`Haii Sayangggkuu🤍
+
+Terimaa kasihh yahh sudahh hadirr dalamm hidupkuu.
+
+Terimaa kasihh jugaa atass perhatianmuu.
+
+Terimaa kasihh karenaa selaluu membuatt hari-hariiku lebihh indahh.
+
+Semogaa hubungann kitaa selaluu dipenuhii kebahagiaann.
+
+Semogaa hubungann inii bisaa sampaii akhirr yahh sayanggg
+
+Akuu akann selaluu mendukungmuu.
+
+Akuu akann selaluu adaa untukmuu.
+
+Akuu bersyukurr dipertemukann denganmuu.
+
+Semogaa kitaa bisaa teruss bersamaa sampaii kapann punn.
+
+Akuu sayanggg kamuu lebihh darii yangg bisaa dijelaskann dengann kataa-kataa.
+
+🤍`;
+
+let i=0;
+
+function typeWriter(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typeWriter,40);
+
+}
+
+}
+
+function showLove(){
+
+document.getElementById("love").style.display="block";
+
+alert("Akuu Sayanggg Kamuu Selamanyaa 🤍");
+
+}
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=3+Math.random()*4+"s";
+
+heart.style.fontSize=20+Math.random()*30+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},7000);
+
+}
+
+setInterval(createHeart,250);
+
+</script>
+
+</body>
+</html>
